@@ -1,0 +1,2 @@
+DEF_CONST(PI, "pi")
+DEF_CONST(EXP, "exp")

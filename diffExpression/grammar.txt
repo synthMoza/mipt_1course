@@ -1,0 +1,7 @@
+getTree ::= getPlusMinus'\0'
+getPlusMinus ::= getMulDiv{'+'/'-' getMulDiv}*
+getMulDiv ::= getPow {'*'/':' getPow}*
+getPow ::= getMathFunc{'^' getMathFunc}
+getMathFunc ::= ('sin' | 'cos' | 'ln' | 'tan' | 'sqrt') '(' getPlusMinus ')' | getBrackets
+getBrackets ::= getNumVar | '(' getPlusMinus ')'
+getNumVar ::= NUMBER | 'x' | CONST
