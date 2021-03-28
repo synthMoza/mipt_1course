@@ -1,0 +1,92 @@
+in
+popr ax
+in
+popr bx
+in
+popr cx
+pushr ax
+push 0
+je line
+pop
+pop
+pushr bx
+pushr bx
+mul
+pushr ax
+pushr cx
+push -4
+mul
+mul
+add
+push 0
+ja discrneg
+je discrzero
+pop
+sqrt
+popr dx
+push 2
+pushr ax
+mul
+push -1
+pushr bx
+mul
+pushr dx
+add
+div
+out
+push 2
+pushr ax
+mul
+push -1
+pushr bx
+mul
+pushr dx
+push -1
+mul
+add
+div
+out
+end
+:discrneg
+end
+:discrzero
+push 2
+pushr ax
+mul
+push -1
+pushr bx
+mul
+div
+out
+end
+:line
+pushr bx
+push 0
+je bzero
+pop
+pop
+pushr bx
+pushr cx
+push -1
+mul
+div
+out
+end
+:bzero
+pushr cx
+push 0
+je infroot
+push 0
+push 0
+push 0
+out
+out
+out
+end
+:infroot
+push 8
+push 8
+push 8
+out
+out
+out

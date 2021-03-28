@@ -1,0 +1,48 @@
+jmp start
+:start
+in
+popm [bp+1]
+pushr bp
+push 1
+add
+popr bp
+call Fib
+out
+end
+:Fib
+push 2
+pushm [bp]
+ja flag0 ; если число больше чем два, то "пушим" fib(x-2)+fib(x-1)
+pop
+pop
+push 1
+jmp return
+:flag0
+pop
+pop
+pushm [bp]
+push -1
+add
+popm [bp+1]
+pushr bp
+push 1
+add
+popr bp
+call Fib
+pushm [bp]
+push -2
+add
+popm [bp+1]
+pushr bp
+push 1
+add
+popr bp
+call Fib
+add
+jmp return
+:return
+pushr bp
+push -1
+add
+popr bp
+ret

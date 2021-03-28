@@ -1,0 +1,14 @@
+push 5
+push 6
+push 7
+popr ax
+popr bx
+popr cx
+push 56
+push 75
+push 23
+popm [bp+2]
+popm [bp]
+popm [7]
+pushm [bp+2]
+end

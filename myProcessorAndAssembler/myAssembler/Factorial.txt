@@ -1,0 +1,30 @@
+in
+popr ax
+call Factorial
+out
+end
+:Factorial
+push 1
+popr bx
+push 1
+popr cx
+push 1
+push 1
+:cycle
+pop
+pop
+pushr bx
+pushr cx
+mul
+popr bx
+pushr cx
+push 1
+add
+popr cx
+pushr cx
+pushr ax
+ja cycle
+pop
+pop
+pushr bx
+ret
